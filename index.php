@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr-FR">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,15 +10,22 @@
         <title> Cours </title>
     </head>
     <body>
-      <header>
-          <nav>
-            <ul>
-              <li><a href="#">Lien 1</a></li>
-              <li><a href="#">Lien 2</a></li>
-              <li><a href="#">Lien 3</a></li>
-            </ul>
-          </nav>
-      </header>
+      <?php include("include/header.php");
+
+      $page = $_GET['page'] ?? "";
+      $page = "page/" . $page . ".inc.php";
+      $files = glob("page/*.inc.php");
+
+      if (in_array($page,$files))
+      {
+        include $page;
+      }
+      else
+      {
+        include("page/test.inc.php");
+      }
+
+      include("include/footer.php"); ?>
     </body>
 
 </html>

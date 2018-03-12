@@ -1,3 +1,3 @@
 <footer>
-  <p><?php echo date(format "Y"); ?> - CESI AP 2017</p>
+  <p><?php echo date("Y"); ?> - CESI AP 2017</p>
 </footer>
